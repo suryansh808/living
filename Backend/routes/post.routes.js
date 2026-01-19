@@ -26,7 +26,6 @@ router.post("/createpost", async (req, res) => {
   }
 });
 
-
 router.get("/fetchbycategory/:categoryId", async (req, res) => {
   try {
     const posts = await Post.find({category: req.params.categoryId,}).sort({ createdAt: -1 });
@@ -36,7 +35,6 @@ router.get("/fetchbycategory/:categoryId", async (req, res) => {
     res.status(500).json({ message: error.message });
   }
 });
-
 
 router.put("/updatepost/:id", async (req, res) => {
   try {
@@ -51,8 +49,6 @@ router.put("/updatepost/:id", async (req, res) => {
     res.status(500).json({ message: error.message });
   }
 });
-
-
 
 router.delete("/deletepost/:id", async (req, res) => {
   try {
