@@ -11,6 +11,7 @@ import PostsPage from "./Admin/PostsPage";
 import CategoryBlogs from "./pages/CategoryBlogs";
 import BlogDetail from "./pages/BlogDetail";
 import { ErrorBoundary } from "./Components/ErrorBoundary";
+import Error404 from "./pages/Error404";
 
 const App = () => {
   return (
@@ -22,6 +23,8 @@ const App = () => {
        <Route path="/blog" element={<Blog />} />
         <Route path="/blog/category/:slug" element={<CategoryBlogs />} />
         <Route path="/blog/category/:slug/:id" element={<BlogDetail />} />
+        <Route path="*" element={<Error404 />} />
+
 
         {/* admin route */}
         <Route path="/adminlogin" element={<Adminlogin />} />
